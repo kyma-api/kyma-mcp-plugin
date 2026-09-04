@@ -40,6 +40,10 @@ Secrets are stored hashed (SHA-256).
 
 ### Cursor
 
+One click: [**Add Kyma to Cursor**](cursor://anysphere.cursor-deeplink/mcp/install?name=Kyma&config=eyJ1cmwiOiJodHRwczovL21jcC5reW1hYXBpLmNvbS9tY3AifQ==) (or the web link `https://cursor.com/en/install-mcp?name=Kyma&config=eyJ1cmwiOiJodHRwczovL21jcC5reW1hYXBpLmNvbS9tY3AifQ==`).
+
+Or by hand, in `.cursor/mcp.json`:
+
 One click:
 [**Add to Cursor**](https://cursor.com/en/install-mcp?name=Kyma&config=eyJ1cmwiOiJodHRwczovL21jcC5reW1hYXBpLmNvbS9tY3AifQ==)
 
