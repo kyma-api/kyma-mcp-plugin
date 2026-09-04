@@ -20,12 +20,21 @@ https://mcp.kymaapi.com/mcp
 | `get_credits` | Your balance | auto (read-only) |
 | `search_docs` | Search Kyma docs | auto (read-only) |
 | `ping` | Health check | auto (read-only) |
+| `get_spend` | This connection's cap, spent, remaining, reset date | auto (read-only) |
+| `list_rankings` | Top models and apps from real traffic | auto (read-only) |
+| `get_model_uptime` | Measured 30-day uptime per model | auto (read-only) |
+| `recommend_model` | Best model for Cline, Cursor, Claude Code and other agents | auto (read-only) |
+| `get_transactions` | Recent credit ledger entries | auto (read-only) |
+| `get_topup_link` | Balance and the billing page (a link, never a checkout) | auto (read-only) |
+| `list_keys` | Your REST API keys by name, masked (optional `keys.read`) | auto (read-only) |
+| `set_low_balance_alert` | Balance at which Kyma emails you (optional `billing.alerts`) | asks once |
 | `send_message` | A real chat completion (billed) | asks once — no charge without your Allow |
 
 Security model: OAuth 2.1 + PKCE with rotating refresh tokens. Each connection gets its
-own key — spend-capped at **$10**, expiring, revocable at
+own key, spend-capped at **$10 per 30 days** (adjustable from $1 to $500) and revocable at
 [kymaapi.com/integrations](https://kymaapi.com/integrations) without touching your REST
-API keys. Secrets are stored hashed (SHA-256).
+API keys. `list_keys` returns masked prefixes only; no tool can create keys or move money.
+Secrets are stored hashed (SHA-256).
 
 ## Install
 
