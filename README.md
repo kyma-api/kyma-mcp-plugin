@@ -49,6 +49,24 @@ Or manually in `.cursor/mcp.json`:
 { "mcpServers": { "kyma": { "url": "https://mcp.kymaapi.com/mcp" } } }
 ```
 
+### Cline
+
+Cline → MCP Servers → **Configure MCP Servers**, then add:
+
+```json
+{ "mcpServers": { "kyma": { "url": "https://mcp.kymaapi.com/mcp", "type": "streamableHttp" } } }
+```
+
+Save; Cline asks you to sign in with Kyma on first use. Stdio-only setups can run `npx -y @kyma-api/mcp-server` instead (a bridge to the same server).
+
+### Gemini CLI
+
+```
+gemini extensions install https://github.com/kyma-api/kyma-mcp-plugin
+```
+
+The first tool call opens a browser for OAuth sign-in, handled by Gemini CLI itself.
+
 ### Claude Code
 
 ```bash
@@ -102,3 +120,6 @@ MIT
 - Official MCP Registry: `com.kymaapi/kyma` (`server.json` in this repo; published with `mcp-publisher`, namespace verified by DNS on kymaapi.com)
 - xAI Grok Build marketplace: pull request to `xai-org/plugin-marketplace`
 - Cursor Marketplace: application submitted
+- Docker MCP Catalog: pull request to `docker/mcp-registry`
+- Cline Marketplace, mcp.so: submissions filed
+- Gemini CLI extensions gallery: `gemini-extension.json` + repo topic `gemini-cli-extension`
