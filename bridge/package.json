@@ -1,0 +1,38 @@
+{
+  "name": "@kyma-api/mcp-server",
+  "version": "1.0.1",
+  "description": "Kyma API MCP server for stdio-only clients: a thin bridge to https://mcp.kymaapi.com/mcp (live model catalog, prices, measured uptime, rankings, credits, spend-capped chat). OAuth sign-in or a Kyma MCP key.",
+  "license": "MIT",
+  "homepage": "https://kymaapi.com/integrations",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kyma-api/kyma-mcp-plugin.git",
+    "directory": "bridge"
+  },
+  "bugs": "https://github.com/kyma-api/kyma-mcp-plugin/issues",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "llm",
+    "kyma",
+    "open-models",
+    "pricing",
+    "uptime"
+  ],
+  "bin": {
+    "kyma-mcp": "bin/kyma-mcp.js"
+  },
+  "files": [
+    "bin",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "mcp-remote": "^0.8.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

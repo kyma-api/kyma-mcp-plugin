@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.kymaapi/kyma",
   "title": "Kyma API",
-  "description": "Open-model catalog with live prices and measured uptime, your credits and spend, spend-capped chat.",
-  "version": "1.0.0",
+  "description": "Live model catalog with prices and measured uptime, rankings, your credits and spend, and spend-capped chat.",
+  "version": "1.0.1",
   "websiteUrl": "https://kymaapi.com",
   "repository": {
     "url": "https://github.com/kyma-api/kyma-mcp-plugin",
@@ -13,6 +13,40 @@
     {
       "type": "streamable-http",
       "url": "https://mcp.kymaapi.com/mcp"
+    }
+  ],
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/kyma-api/kyma-mcp-plugin/main/assets/logo-400.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "400x400"
+      ]
+    },
+    {
+      "src": "https://raw.githubusercontent.com/kyma-api/kyma-mcp-plugin/main/assets/icon.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": [
+        "any"
+      ]
+    }
+  ],
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@kyma-api/mcp-server",
+      "version": "1.0.1",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "KYMA_MCP_KEY",
+          "description": "Optional Kyma MCP key (km-\u2026) from kymaapi.com/integrations to skip the browser sign-in",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
     }
   ]
 }
