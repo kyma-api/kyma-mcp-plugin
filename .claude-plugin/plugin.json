@@ -1,7 +1,7 @@
 {
   "name": "kyma-api",
   "description": "Kyma API for your agent: live model catalog with real prices and measured uptime, credits, and spend-capped test completions over one MCP URL.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": { "name": "Kyma API", "url": "https://kymaapi.com" },
   "homepage": "https://kymaapi.com",
   "repository": "https://github.com/kyma-api/kyma-mcp-plugin",

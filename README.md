@@ -36,6 +36,25 @@ own key, spend-capped at **$10 per 30 days** (adjustable from $1 to $500) and re
 API keys. `list_keys` returns masked prefixes only; no tool can create keys or move money.
 Secrets are stored hashed (SHA-256).
 
+## Skills
+
+Hosts that load skills (Claude Code, Cursor, Codex, Grok Build) pick these up from
+`skills/`. They tell the agent which tools to reach for and what to do with the answer.
+
+| Skill | When it triggers |
+|---|---|
+| `pick-a-model` | "Which model should I use?", "cheapest model for X", "is this model up?", or setting up Cline / Cursor / Claude Code with a model |
+| `check-spend-and-credits` | Balance, credits, this connection's cap and reset date, what a call cost — and before anything billed |
+| `send-a-test-completion` | "Test this model", "reply with pong via X", comparing two models on one prompt — always behind an explicit Allow |
+
+## Manifests
+
+One repository, every host. Cursor reads `.cursor-plugin/plugin.json`, Claude Code reads
+`.claude-plugin/plugin.json` + `.mcp.json`, Codex reads `.codex-plugin/plugin.json` +
+`.mcp.json`, Grok Build reads `.grok-plugin/plugin.json` + `mcp.json`, and Gemini CLI
+reads `gemini-extension.json`. Every one of them points at the same server URL and the
+same `skills/`.
+
 ## Install
 
 ### Cursor
@@ -94,8 +113,8 @@ codex mcp login kyma
 ### Grok
 
 - **grok.com**: Connectors → New Connector → Custom → paste the URL.
-- **Grok Build**: this repository is a Claude-Code-format plugin — Grok Build loads it
-  as-is (`.mcp.json`).
+- **Grok Build**: this repository ships a Grok Build manifest — Grok Build loads it as-is
+  (`.grok-plugin/plugin.json` + `mcp.json`).
 
 ### ChatGPT (Developer Mode)
 

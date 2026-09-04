@@ -1,0 +1,15 @@
+{
+  "name": "kyma-api",
+  "displayName": "Kyma API",
+  "description": "Use Kyma API from Codex: browse the live model catalog with real prices and measured uptime, check credits and this connection's spend cap, and send spend-capped test completions.",
+  "version": "0.1.1",
+  "author": {
+    "name": "Kyma API",
+    "url": "https://kymaapi.com"
+  },
+  "homepage": "https://kymaapi.com",
+  "repository": "https://github.com/kyma-api/kyma-mcp-plugin",
+  "license": "MIT",
+  "keywords": ["kyma", "llm", "models", "api-gateway", "mcp", "pricing", "inference"],
+  "mcpServers": "./.mcp.json"
+}

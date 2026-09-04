@@ -1,0 +1,16 @@
+{
+  "name": "kyma-api",
+  "displayName": "Kyma API",
+  "version": "0.1.1",
+  "description": "Use Kyma API from Grok: browse the live model catalog with real prices and measured uptime, check credits and this connection's spend cap, and send spend-capped test completions.",
+  "author": {
+    "name": "Kyma API",
+    "url": "https://kymaapi.com"
+  },
+  "license": "MIT",
+  "homepage": "https://kymaapi.com",
+  "repository": "https://github.com/kyma-api/kyma-mcp-plugin",
+  "keywords": ["grok", "plugin", "kyma", "llm", "models", "api-gateway", "mcp"],
+  "logo": "assets/logo.png",
+  "mcpServers": "mcp.json"
+}

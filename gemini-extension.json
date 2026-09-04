@@ -1,6 +1,6 @@
 {
   "name": "kyma",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Kyma API for your agent: browse the live open-model catalog with real prices and measured uptime, check credits and spend, get a model recommendation for your coding agent, and send test completions.",
   "mcpServers": {
     "kyma": {
