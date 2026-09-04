@@ -27,6 +27,7 @@ Kyma API is an LLM gateway: one OpenAI-compatible endpoint (plus an Anthropic-co
 - **Read tools never charge.** Catalog, pricing, rankings, uptime, credits and spend are free to call and auto-approved by most clients.
 - **`send_message` is the only tool that spends.** The client must allow it first; every reply reports what the call cost, what has been spent and the cap.
 - **Measured uptime, not a promise.** `get_model_uptime` returns the 30-day rate per model from [kymaapi.com/status](https://kymaapi.com/status). If a route fails mid-request, Kyma retries the same model on another route.
+- **A read-only endpoint for reviewers.** `https://mcp.kymaapi.com/mcp/readonly` accepts the same tokens but keeps only read scopes for the request: no `send_message`, no `set_low_balance_alert`, whatever the grant was approved with. Metadata: `/.well-known/oauth-protected-resource/mcp/readonly`.
 - **Beyond chat.** The same Kyma key covers speech-to-text, text-to-speech, embeddings, rerank, image and video through the REST API; `list_models` shows all of them.
 
 ## Install
@@ -201,6 +202,6 @@ Prompts you can paste once connected:
 
 Kyma is an LLM API gateway: open and frontier models, one endpoint, pay per token, with automatic failover across providers and per-model measured uptime published at [kymaapi.com/models](https://kymaapi.com/models). New accounts start with free credit.
 
-- Website: https://kymaapi.com · Docs: https://docs.kymaapi.com · Status: https://kymaapi.com/status
+- Website: https://kymaapi.com · This server's page: https://kymaapi.com/mcp · Docs: https://docs.kymaapi.com · Status: https://kymaapi.com/status
 - Support: hello@kymaapi.com · Abuse: report@kymaapi.com
 - Changelog: [CHANGELOG.md](CHANGELOG.md) · License: MIT

@@ -1,6 +1,7 @@
 # Changelog
 
 ## 1.0.2 (2026-09-04)
+- Read-only endpoint `/mcp/readonly` and the page kymaapi.com/mcp documented.
 - Three skills (`pick-a-model`, `check-spend-and-credits`, `send-a-test-completion`) and host manifests for Codex, Cursor and Grok, from the unmerged skills branch.
 - npm bridge declares `mcpName` so the Official MCP Registry can list it as a package; all manifests move to 1.0.2 together.
 
