@@ -96,3 +96,9 @@ never-die fallback chain and per-model measured uptime published at
 ## License
 
 MIT
+
+## Registries
+
+- Official MCP Registry: `com.kymaapi/kyma` (`server.json` in this repo; published with `mcp-publisher`, namespace verified by DNS on kymaapi.com)
+- xAI Grok Build marketplace: pull request to `xai-org/plugin-marketplace`
+- Cursor Marketplace: application submitted
