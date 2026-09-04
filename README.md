@@ -163,6 +163,14 @@ Every `send_message` reply carries `cost`, `spent_usd` and `spend_cap_usd`, and 
 - **Prompt injection:** model output that reaches your agent is untrusted text. Keep your client's confirmation prompt on for `send_message`, and do not let the agent paste keys or balances into other tools.
 - **Data:** request logs are kept 90 days for billing reconciliation and abuse handling, then deleted. Kyma does not train on customer data. Privacy: [kymaapi.com/privacy](https://kymaapi.com/privacy).
 
+## Skills
+
+Three skills teach an agent how to use the tools well: `pick-a-model` (compare price, measured uptime and fit), `check-spend-and-credits` (balance, cap, remaining, reset date), `send-a-test-completion` (one billed call, only after an explicit Allow). They live in [`skills/`](skills/) and install into any agent that reads skills:
+
+```bash
+npx skills add kyma-api/kyma-mcp-plugin
+```
+
 ## Examples
 
 Prompts you can paste once connected:
