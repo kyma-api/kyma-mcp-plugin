@@ -3,7 +3,7 @@
   "name": "com.kymaapi/kyma",
   "title": "Kyma API",
   "description": "Live model catalog with prices and measured uptime, rankings, credits and spend, spend-capped chat.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "websiteUrl": "https://kymaapi.com",
   "repository": {
     "url": "https://github.com/kyma-api/kyma-mcp-plugin",
@@ -35,7 +35,7 @@
     {
       "registryType": "npm",
       "identifier": "@kyma-api/mcp-server",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "transport": {
         "type": "stdio"
       },

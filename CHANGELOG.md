@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.2 (2026-09-04)
+- npm bridge declares `mcpName` so the Official MCP Registry can list it as a package; all manifests move to 1.0.2 together.
+
 ## 1.0.1 (2026-09-04)
 - One version across the plugin manifests, the Official MCP Registry entry and the npm stdio bridge (they were 0.1.0 / 1.0.0 / 0.1.1).
 - Registry entry gains `icons` and the npm bridge as a `packages` entry.

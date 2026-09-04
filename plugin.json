@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "kyma-api",
   "description": "Kyma API for your agent: live model catalog with prices and measured uptime, rankings, your credits and spend, and spend-capped chat over one MCP URL with OAuth sign-in.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": {
     "name": "Kyma API",
     "url": "https://kymaapi.com"
