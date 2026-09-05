@@ -1,6 +1,6 @@
 {
   "name": "kyma",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Kyma API for your agent: live model catalog with prices and measured uptime, rankings, credits and spend, a model recommendation for your coding agent, and spend-capped chat.",
   "mcpServers": {
     "kyma": {

@@ -1,7 +1,7 @@
 {
   "name": "kyma-api",
   "displayName": "Kyma API",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Kyma API for your agent: live model catalog with prices and measured uptime, rankings, credits and spend, and spend-capped chat over one MCP URL with OAuth sign-in.",
   "author": {
     "name": "Kyma API",

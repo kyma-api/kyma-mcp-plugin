@@ -24,8 +24,8 @@ Kyma API is an LLM gateway: one OpenAI-compatible endpoint (plus an Anthropic-co
 
 - **Hosted, remote, OAuth sign-in.** Streamable HTTP with OAuth 2.1, PKCE and dynamic client registration. No API key is pasted into the client.
 - **A dedicated key per connection.** Separate from your REST API keys, capped at **$10 per 30 days** by default (adjustable from $1 to $500 on the approval screen or at [kymaapi.com/integrations](https://kymaapi.com/integrations)), revocable at any time.
-- **Read tools never charge.** Catalog, pricing, rankings, uptime, credits and spend are free to call and auto-approved by most clients.
-- **`send_message` is the only tool that spends.** The client must allow it first; every reply reports what the call cost, what has been spent and the cap.
+- **Read tools never charge.** Catalog, pricing, rankings, uptime, credits, spend, your usage and your requests are free to call and auto-approved by most clients.
+- **`send_message` is priced before it spends.** The client must allow it first; `max_cost_usd` is enforced by deriving a `max_tokens` that fits the ceiling from the catalog price, so a call above it is refused before anything is sent. Every reply reports what the call cost, what has been spent and the cap.
 - **Measured uptime, not a promise.** `get_model_uptime` returns the 30-day rate per model from [kymaapi.com/status](https://kymaapi.com/status). If a route fails mid-request, Kyma retries the same model on another route.
 - **A read-only endpoint for reviewers.** `https://mcp.kymaapi.com/mcp/readonly` accepts the same tokens but keeps only read scopes for the request: no `send_message`, no `set_low_balance_alert`, whatever the grant was approved with. Metadata: `/.well-known/oauth-protected-resource/mcp/readonly`.
 - **Beyond chat.** The same Kyma key covers speech-to-text, text-to-speech, embeddings, rerank, image and video through the REST API; `list_models` shows all of them.
@@ -133,7 +133,7 @@ The bridge runs `mcp-remote` against the hosted URL, so the tools are exactly th
 
 ## Tools
 
-15 tools. 13 appear on a default connection; `list_keys` and `set_low_balance_alert` appear when their optional scopes are granted on the approval screen.
+18 tools. 16 appear on a default connection; `list_keys` and `set_low_balance_alert` appear when their optional scopes are granted on the approval screen.
 
 | Tool | What it does | Scope | Approval |
 |---|---|---|---|
@@ -147,13 +147,16 @@ The bridge runs `mcp-remote` against the hosted URL, so the tools are exactly th
 | `ping` | Health check | `models.read` | auto, read-only |
 | `get_credits` | Your balance | `usage.read` | auto, read-only |
 | `get_spend` | This connection's cap, spent, remaining and reset date | `usage.read` | auto, read-only |
+| `get_usage` | Your requests, tokens and cost by model over a window | `usage.read` | auto, read-only |
+| `get_request` | One request by id: model served, tokens, cost, routes tried | `usage.read` | auto, read-only |
+| `estimate_cost` | What a call would cost before you make it | `models.read` | auto, read-only |
 | `get_transactions` | Recent credit ledger entries | `usage.read` | auto, read-only |
 | `get_topup_link` | Balance and the billing page (a link, never a checkout) | `usage.read` | auto, read-only |
 | `list_keys` | Your REST API keys by name, masked | `keys.read` (optional) | auto, read-only |
 | `set_low_balance_alert` | Balance at which Kyma emails you | `billing.alerts` (optional) | asks once |
-| `send_message` | A chat completion through any model; the only tool that spends credit | `chat.completions` | asks once; no charge without your Allow |
+| `send_message` | A chat completion through any model; the only tool that spends credit; optional `max_tokens` and `max_cost_usd` | `chat.completions` | asks once; no charge without your Allow |
 
-Every `send_message` reply carries `cost`, `spent_usd` and `spend_cap_usd`, and `get_spend` shows what is left before you call it.
+Every `send_message` reply carries `cost`, `spent_usd` and `spend_cap_usd`, plus `structuredContent` with the model that served it and the routes tried. `get_spend` shows what is left before you call it.
 
 ## Security and spend
 
