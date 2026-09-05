@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.kymaapi/kyma",
   "title": "Kyma API",
-  "description": "Live model catalog with prices and measured uptime, rankings, credits and spend, spend-capped chat.",
+  "description": "LLM API gateway: one key to 120+ models, measured uptime per model, spend-capped chat.",
   "version": "1.0.3",
   "websiteUrl": "https://kymaapi.com",
   "repository": {
@@ -42,7 +42,7 @@
       "environmentVariables": [
         {
           "name": "KYMA_MCP_KEY",
-          "description": "Optional Kyma MCP key (km-\u2026) from kymaapi.com/integrations to skip the browser sign-in",
+          "description": "Optional Kyma MCP key (km-…) from kymaapi.com/integrations to skip the browser sign-in",
           "isRequired": false,
           "isSecret": true
         }
