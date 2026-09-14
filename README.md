@@ -5,7 +5,7 @@
 <h1 align="center">Kyma API MCP Server</h1>
 
 <p align="center">
-  Kyma API is an LLM API gateway that routes one key to 120+ models and publishes measured uptime per model.<br>
+  Kyma API is an LLM API gateway that routes one key to 100+ models and publishes measured uptime per model.<br>
   Every model behind one endpoint, with public rankings and a spend cap you set.<br>
   <code>https://mcp.kymaapi.com/mcp</code>
 </p>
